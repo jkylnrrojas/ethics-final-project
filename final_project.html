@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AI Companionship Ethics</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --background: #ffffff;
+      --text: #111111;
+      --heading: #000000;
+      --primary: #1e3a8a;
+      --primary-dark: #172554;
+      --card-bg: #ffffff;
+      --border: #222222;
+      --focus: #ffbf00;
+      --footer-bg: #000000;
+      --footer-text: #ffffff;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    .navbar-brand {
+      font-family: "Playfair Display", serif;
+      color: var(--heading);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      background: #000;
+      color: #fff;
+      padding: 12px 16px;
+      z-index: 1000;
+      font-weight: bold;
+      border: 2px solid #fff;
+    }
+
+    .skip-link:focus {
+      left: 10px;
+    }
+
+    :focus-visible {
+      outline: 4px solid var(--focus);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .navbar {
+      border-bottom: 3px solid white;
+    }
+
+    .nav-link {
+      color: #ffffff !important;
+      font-weight: 600;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #ffeb3b !important;
+      text-decoration: underline;
+    }
+
+    .hero-section {
+      background: var(--primary-dark);
+      color: #ffffff;
+      padding: 5rem 2rem;
+      border-radius: 1rem;
+      border: 3px solid #000;
+    }
+
+    .hero-section h1,
+    .hero-section p {
+      color: #ffffff;
+    }
+
+    .card,
+    .info-box {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 1rem;
+      padding: 3rem;
+      box-shadow: none;
+    }
+
+    .card-body,
+    .info-box {
+      color: var(--text);
+    }
+
+    .card h3,
+    .card p,
+    .info-box h2,
+    .info-box p,
+    .info-box li {
+      color: var(--text);
+    }
+
+    .card:focus-within,
+    .card:focus {
+      outline: 4px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .option-link:focus-visible .card {
+      outline: 4px solid #ffbf00;
+      outline-offset: 4px;
+      border-radius: 1rem;
+    }
+
+    .option-link:hover .card {
+      transform: translateY(-5px);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-light {
+      background-color: #ffffff;
+      color: #000000;
+      border: 3px solid #000000;
+      font-weight: 700;
+    }
+
+    .btn-light:hover,
+    .btn-light:focus {
+      background-color: #000000;
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .parent-section {
+      background-color: #172554;
+      color: white;
+      border: 3px solid #000;
+      border-radius: 1rem;
+      padding: 3rem;
+    }
+
+    .parent-section h2,
+    .parent-section p,
+    .parent-section li {
+      color: white;
+    }
+
+    .parent-section ul {
+      margin-top: 1rem;
+    }
+
+    .parent-section li {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #0033cc;
+    }
+
+    a:hover,
+    a:focus {
+      color: #000099;
+    }
+
+    ul li {
+      margin-bottom: 1rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      border-top: 4px solid #ffffff;
+    }
+
+    footer p,
+    footer small {
+      color: #ffffff;
+    }
+
+    * {
+      text-shadow: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+
+      .info-box {
+        padding: 2rem;
+      }
+
+      body {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">
+  Skip to main content
+</a>
+
+<header>
+  <nav
+    class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
+    aria-label="Main navigation"
+  >
+    <div class="container">
+
+      <a class="navbar-brand text-white" href="#">
+        AI Companionship Ethics
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#stakeholders">Stakeholders</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#action-options">Options for Action</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#discussion">Discussion</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content" class="container my-5">
+
+  <!-- HERO -->
+  <section
+    class="hero-section text-center"
+    aria-labelledby="hero-title"
+  >
+    <h1 id="hero-title" class="display-3 fw-bold">
+      Understanding AI Companionship & Its Ethics
+    </h1>
+
+    <p class="lead mt-4">
+      Exploring how AI is changing emotional support, communication, and human connection.
+    </p>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-title">
+
+    <div class="info-box" tabindex="0">
+
+      <h2 id="about-title">
+        What is AI Companionship?
+      </h2>
+
+      <p>
+        AI companionship refers to digital systems designed to interact with people in supportive, conversational, and engaging. 
+        These systems use artificial intelligence technologies such as natural language processing and machine learning to simulate communication and emotional 
+        interaction.
+      </p>
+      <p>
+        AI companionship has become increasingly common through chatbots and such designed to simulate emotional connection, conversation, and personal support. 
+        Many AI companionship platforms allow users to customize their chatbot’s personalities, interests, communication styles, even the type of relationship they want 
+        to have with the AI companion. 
+        Some people argue that these systems can reduce loneliness in individuals. 
+        They provide emotional comfort, and create accessible spaces and resources for those needs. 
+        However, others argue that AI systems blur the line between human relationships and machine responses, especially when users become emotionally dependent on the 
+        technology or when the systems respond in ways that result in users harming themselves or others. 
+        This website aims to explore AI companionship as a technology in order for you to understand its pros, cons, and the effects it can have on users.
+      </p>
+
+      <h2 id="deep-dive-title">A Deeper Dive</h2>
+      <p>
+        Research on AI companionship shows that the concerns raised around this topic show broader ethical and social issues surrounding emotionally intelligent AI 
+        systems. 
+        Researchers argue that AI companions are more than just tools since users can often form emotional attachments to these chatbots and rely on them for their 
+        emotional needs, such as comfort, validation, and support. 
+        <em><a href="https://link.springer.com/content/pdf/10.1007/s00146-025-02751-7.pdf">
+          From Moral Panic to Normalization: Comparing Users and Non-users of AI Companionship Apps
+        </a></em> explains that, while non-users often distrust AI companionship, regular users of this service tend to normalize these relationships and view the 
+        connections they make with the AI as emotionally meaningful. 
+        In another article, 
+        <em><a href="https://research.ebsco.com/c/b2j3jm/viewer/html/sl7shkwjmj">
+          We Need to Prepare for “Addictive Intelligence”
+        </a></em>, it is argued that AI systems may prioritize user engagement in ways similar to social media and warn that emotionally adaptive AI can learn users’ 
+        vulnerabilities that reinforce behaviors that keep them attached to the platform. 
+        In 
+        <em><a href="https://link.springer.com/content/pdf/10.1007/s00146-024-01958-4.pdf">
+          Personal AI, Deception, and the Problem of Emotional Bubbles
+        </a></em>, the authors argue that AI companions often create these emotional bubbles of sorts where users mainly receive validation instead of healthy 
+        disagreement or accountability like they would not experience in real-world relationships. 
+        This again increases emotional dependence on the AI companion, as well as isolates users from real-world relationships that do provide contradiction to them. 
+        Similarly, in 
+        <em><a href="https://journals.sagepub.com/doi/10.1177/09593543251319738">
+          Hysteria in Empathy: Understanding Virtual Companionship and Emotional Connection Between Humans and AI
+        </a></em>, the authors explain that users view the empathy generated by AI companions as genuine care and emotion. 
+        This can make vulnerable users place too much trust in the chatbot’s advice, even if AI does not actually understand emotion. 
+        Finally, the research paper 
+        <em><a href="https://www.tandfonline.com/doi/full/10.1080/10447318.2025.2531279">
+          Are Digital Offspring Closer than Biological Offspring?
+        </a></em> shows that the customization of chatbots can increase emotional attachment to AI companions by making users feel deeply and uniquely understood, when 
+        in reality the chatbot is just reinforcing what they say and feel.
+      </p>
+
+      <h2 id="ethics-title">Ethical Issues</h2>
+      <p>The ethical isses here are:</p>
+      <ul>
+        <li>A dependency on AI companions</li>
+        <li>The authenticity of this type of companionship</li>
+        <li>How it affects a user’s real-world relationships</li>
+        <li>Mental health risks</li>
+        <li>No clear outline for who is responsible for any negative outcomes</li>
+        <li>The commercialization of social interaction</li>
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- STAKEHOLDERS -->
+  <section
+    id="stakeholders"
+    aria-labelledby="stakeholders-title"
+  >
+
+    <h2 id="stakeholders-title" class="text-center mb-4">
+      AI Companionship Stakeholders
+    </h2>
+
+    <div class="row g-4">
+
+      <article class="col-md-4">
+
+        <div class="card h-100" tabindex="0">
+          <img
+              src="https://shotstash.com/wp-content/uploads/2019/10/shot-stash-coworking-space-with-laptops-from-above.jpg"
+              class="card-img-top"
+              alt="Two people on their laptops"
+            />
+          <div class="card-body">
+
+            <h3>Users</h3>
+
+            <p>
+              Users are people who actively use AI companions. 
+              Their identities can range from many different individuals and their relationship to this topic is how they use this technology in order to alleviate 
+              loneliness and isolation and as a form of conversation and social interaction. 
+              Users could be provided with the benefits of comfort, socialization, and judgement-free interactions, but could also face the negative impacts such as 
+              becoming dependent on the AI, not partaking in real-life in favor of the AI, or being misled by the AI if they seek advice from it. 
+              User interests that should be considered are mental health and safety, whether from data breaches since users might discuss private information with the AI 
+              or from the AI itself.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="col-md-4">
+
+        <div class="card h-100" tabindex="0">
+          <img
+              src="https://img.freepik.com/premium-photo/side-view-young-african-american-female-software-developer-coding-multiple-screens-desk_1263820-540.jpg"
+              class="card-img-top"
+              alt="Woman coding"
+            />
+          <div class="card-body">
+
+            <h3>Hosts</h3>
+
+            <p>
+              Hosts are the developers and companies that run these AI companions. 
+              Their identities range from the engineers to the companies themselves, as long as they contribute to the creation and distribution of AI companionship, and 
+              their relationship to this topic is through the creation of this technology as they are in charge of how this technology is built, trained, and released. 
+              Hosts could earn the benefits of profits and advancement in this technology, but could also face the negative impacts such as facing public backlash or 
+              facing legal or ethical repercussions. 
+              Host interests that should be considered are their interests in earning from their product, staying ahead of competitors, and maintaining and increasing 
+              their user base.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="col-md-4">
+
+        <div class="card h-100" tabindex="0">
+          <img
+              src="https://images.stockcake.com/public/3/0/b/30b53f41-8a2f-4f8d-bfe8-4b07a8bd86a5_large/legal-team-meeting-stockcake.jpg"
+              class="card-img-top"
+              alt="Legal team at a table"
+            />
+          <div class="card-body">
+
+            <h3>Regulators</h3>
+
+            <p>
+              Regulators are government bodies ensuring safety, fairness, and privacy in AI systems.
+              Their identities range from lawmakers to government agencies, and their relationship to this topic is creating the rules AI technology has to follow and 
+              regulating the hosts to make sure their products run according to said rules. 
+              Regulators are impacted by this technology due to the fact that they are the ones responsible for creating the rules that keep the hosts in check and 
+              maintaining the users’ safety and rights. 
+              Regulators would probably be interested in public safety, fair and legal business practices, and enforcing the rights of users such as their right to 
+              privacy and transparency.
+            </p>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ACTION OPTIONS -->
+  <section
+    id="action-options"
+    aria-labelledby="action-options-title"
+  >
+
+    <h2 id="actions-options-title" class="text-center mb-4">
+      Options For Action
+    </h2>
+
+    <div class="row g-4">
+
+      <article class="col-md-4">
+
+        <a href="option1.html" class="text-decorations-none text-dark d-block h-100 option-link" aria-label="Read more about Option 1: No Restrictions">
+
+        <div class="card h-100">
+
+          <div class="card-body">
+
+            <h3>Option 1: No Restrictions</h3>
+
+            <p>
+              AI companions should have no restrictions in order to simulate better emotional bonds.
+            </p>
+
+            <p class="fw-bold">
+              Press Enter to learn more.
+            </p>
+
+          </div>
+
+        </div>
+
+      </a>
+
+      </article>
+
+      <article class="col-md-4">
+
+        <a href="option2.html" class="text-decorations-none text-dark d-block h-100 option-link" aria-label="Read more about Option 2: Restricted Companions">
+
+        <div class="card h-100">
+
+          <div class="card-body">
+
+            <h3>Option 2: Restricted Companions</h3>
+
+            <p>
+              AI companions should have restrictions in place, but still be allowed to simulate deep emotional connections with users.
+            </p>
+
+            <p class="fw-bold">
+              Press Enter to learn more.
+            </p>
+
+          </div>
+
+        </div>
+
+        </a>
+
+      </article>
+
+      <article class="col-md-4">
+
+        <a href="option3.html" class="text-decorations-none text-dark d-block h-100 option-link" aria-label="Read more about Option 3: Complete Ban">
+
+        <div class="card h-100">
+
+          <div class="card-body">
+
+            <h3>Option 3: Complete Ban</h3>
+
+            <p>
+              AI should only be used for function, so AI companions should not be allowed overall.
+            </p>
+
+            <p class="fw-bold">
+              Press Enter to learn more.
+            </p>
+
+          </div>
+
+        </div>
+
+        </a>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- PARENTS SECTION -->
+   <section
+   id="parents"
+   class="mb-5"
+   aria-labelledby="parents-title"
+   >
+   
+   <div class="parent-section" tabindex="0">
+    
+    <h2 id="parents-title">
+      Information for Parents
+    </h2>
+
+    <p>
+      AI companionship apps and chatbots are also becoming popular among younger users. 
+      Parents may want to understand how these systems work and how they can affect emotional well-being, privacy, and social development.
+      Some AI companions are designed to simulate emotional relationships and may encourage frequent interaction.
+      It's important to monitor the time spent with these companions to prevent concerningly long interactions.
+      Younger users may become emotionally attached to AI systems and start to rely on them instead of real-world relationships.
+      This can affect social and emotional development among children as these AI models are built to be agreeable in order to keep user engagement.
+      Many AI platforms collect personal data and conversations, so privacy settings and data policies are important to review.
+      Make sure your child(ren) understand what they can or cannot say to AI companions in order to protect important data, such as names, addresses, phone numbers, ect.
+      as well as instilling an understanding that some AI systems may generate inaccurate, inappropriate, or emotionally persuasive responses.
+      Overall, parents should discuss healthy technology habits and encourage balance between online and offline social interaction and remember that supervision is 
+      always important.
+      Open conversations between parents and children about AI technology can help younger users better understand both the benefits and risks of AI companionship.
+    </p>
+
+  </div>
+
+</section>
+
+  <!-- DISCUSSION -->
+  <section
+    id="discussion"
+    aria-labelledby="discussion-title"
+  >
+
+    <div class="info-box" tabindex="0">
+
+      <h2 id="discussion-title">
+        Discussion Questions
+      </h2>
+
+      <p>The following discussion questions are intended to prompt you to think more deeply about the topic.</p>
+
+      <ul>
+        <li>What makes human connections different from AI generated ones? Does that distinction matter if AI companionship helps a user’s emotional well-being?</li>
+        <li>Is it ethical for companies to profit from people’s loneliness or isolation through the development of AI companions? Should there be some boundaries, legal 
+          or moral, in place?</li>
+        <li>Should there be age restrictions or other possible safeguards for younger users or is it their guardian’s responsibility? Both?</li>
+        <li>How might long-term use of an AI companion change the way a user forms and maintains relationships? Could a reliance on AI companionship be developed?</li>
+        <li>If AI companions can become persuasive to users and influence decision making, is the company liable for any AI-influenced decisions that negatively affect 
+          the user’s life? Should they be?</li>
+      </ul>
+
+    </div>
+
+  </section>
+  
+  <!-- QUIZ SECTION -->
+  <section
+  id="quiz"
+  class="mb-5"
+  aria-labelledby="quiz-title"
+  >
+  
+  <div class="info-box" tabindex="0">
+    
+    <h2 id="quiz-title">
+      Quick Quiz!
+    </h2>
+    
+    <p>
+      Test your understanding of AI companionship and the ethical issues discussed on this website.
+    </p>
+    
+    <form id="quiz-form">
+      
+      <!-- Question 1 -->
+       <div class="mb-4">
+        <p><strong>1. What is one major concern about AI companionship?</strong></p>
+        
+        <div>
+          <input type="radio" id="q1a" name="q1" value="a">
+          <label for="q1a">AI companions require no internet access</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q1b" name="q1" value="b">
+          <label for="q1b">Users may become emotionally dependent on AI</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q1c" name="q1" value="c">
+          <label for="q1c">AI companions cannot communicate with users</label>
+        </div>
+      </div>
+      
+      <!-- Question 2 -->
+      <div class="mb-4">
+        <p><strong>2. Which stakeholder is responsible for creating regulations?</strong></p>
+
+        <div>
+          <input type="radio" id="q2a" name="q2" value="a">
+          <label for="q2a">Users</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q2b" name="q2" value="b">
+          <label for="q2b">Hosts</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q2c" name="q2" value="c">
+          <label for="q2c">Regulators</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="mb-4">
+        <p><strong>3. Why might parents monitor AI companion usage?</strong></p>
+
+        <div>
+          <input type="radio" id="q3a" name="q3" value="a">
+          <label for="q3a">To encourage complete reliance on AI</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q3b" name="q3" value="b">
+          <label for="q3b">To help protect privacy and healthy social development</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q3c" name="q3" value="c">
+          <label for="q3c">To prevent children from using computers entirely</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="mb-4">
+        <p><strong>4. What is one benefit supporters claim AI companions provide?</strong></p>
+
+        <div>
+          <input type="radio" id="q4a" name="q4" value="a">
+          <label for="q4a">Reduced loneliness</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q4b" name="q4" value="b">
+          <label for="q4b">Guaranteed accurate advice</label>
+        </div>
+
+        <div>
+          <input type="radio" id="q4c" name="q4" value="c">
+          <label for="q4c">Replacement of all human relationships</label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+      type="button"
+      class="btn btn-dark"
+      onclick="checkQuiz()"
+      >
+        Submit Quiz
+      </button>
+    
+    </form>
+    
+    <!-- Results -->
+    <div
+    id="quiz-results"
+    class="mt-4 fw-bold"
+    aria-live="polite"
+    ></div>
+  
+  </div>
+
+</section>
+
+</main>
+
+<footer class="py-4 text-center">
+
+  <p>
+    © 2026 AI Companionship Ethics
+  </p>
+
+  <small>
+    Educational website built with Bootstrap 5
+  </small>
+
+</footer>
+
+<script>
+  function checkQuiz() {
+
+    let score = 0;
+
+    const answers = {
+      q1: "b",
+      q2: "c",
+      q3: "b",
+      q4: "a"
+    };
+
+    const form = document.forms["quiz-form"];
+
+    for (let question in answers) {
+
+      const selected = document.querySelector(
+        `input[name="${question}"]:checked`
+      );
+
+      if (selected && selected.value === answers[question]) {
+        score++;
+      }
+    }
+
+    document.getElementById("quiz-results").innerHTML =
+      "You scored " + score + " out of 4.";
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
